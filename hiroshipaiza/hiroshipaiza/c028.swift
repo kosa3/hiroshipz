@@ -1,12 +1,22 @@
+//
+//  main.swift
+//  hiroshipaiza
+//
+//  Created by hiroshings on 2016/05/17.
+//  Copyright © 2016年 hiroshings. All rights reserved.
+//
+
 import Foundation
 
 let count: String = readLine()!
-let intCount: Int = Int(count)!
+//let intCount: Int = Int(count)!
 
 var totalPoint = 0
 var arr: [String] = []
 
-for i in 0..<intCount {
+print(count)
+
+for i in 0..<2 {
     var str: String = readLine()!
     arr = str.characters.split(" ").map(String.init)
     
@@ -21,12 +31,11 @@ for i in 0..<intCount {
     
     // 文字が一致しない場合
     for i in 0..<correctWord.characters.count {
-
+        
         if correctWord[correctWord.startIndex.advancedBy(i)] != word[word.startIndex.advancedBy(i)] {
             missMatch += 1
         }
     }
-    
     switch missMatch {
     case 0:
         totalPoint += 2
@@ -35,7 +44,6 @@ for i in 0..<intCount {
     default:
         break
     }
-    
 }
 
 print(totalPoint)
